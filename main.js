@@ -29,10 +29,10 @@ var gumVideo = document.querySelector('video#gum');
 var recordedVideo = document.querySelector('video#recorded');
 
 var recordButton = document.querySelector('button#record');
-var playButton = document.querySelector('button#play');
+var playerButton = document.querySelector('button#play');
 var downloadButton = document.querySelector('button#download');
 recordButton.onclick = toggleRecording;
-playButton.onclick = play;
+playerButton.onclick = play;
 downloadButton.onclick = download;
 
 // window.isSecureContext could be used for Chrome
