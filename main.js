@@ -111,10 +111,16 @@ function startRecording() {
         options = 'audio/mp3'; // Chrome 47
         mediaRecorder = new MediaRecorder(window.stream, options);
       } catch (e2) {
+        console.error('Exception while creating MediaRecorder:', e2);
+        try {
+        options = 'audio/mp3'; // Chrome 47
+        mediaRecorder = new MediaRecorder(window.stream);
+      } catch (e3) {
         alert('MediaRecorder is not supported by this browser.\n\n' +
             'Try Firefox 29 or later, or Chrome 47 or later, with Enable experimental Web Platform features enabled from chrome://flags.');
-        console.error('Exception while creating MediaRecorder:', e2);
+        console.error('Exception while creating MediaRecorder:', e3);
         return;
+      }
       }
     }
   }
